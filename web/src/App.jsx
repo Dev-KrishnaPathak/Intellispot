@@ -1,5 +1,8 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { Dashboard } from './dashboard'
+import Demo from './demo'
+import Pricing from './pricing'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import ReactGlobe from 'react-globe.gl'
 import { useEffect, useRef, useState } from 'react'
@@ -628,13 +631,22 @@ function Footer() {
 
 export default function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Hero />
-      <Features />
-      <CTA />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <Features />
+            <CTA />
+          </>
+        } />
+        <Route path="/dashboard" element={<Dashboard />} />
+  <Route path="/demo" element={<Demo />} />
+  <Route path="/pricing" element={<Pricing />} />
+      </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
 
