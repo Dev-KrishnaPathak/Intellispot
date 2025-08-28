@@ -579,7 +579,7 @@ export function Dashboard() {
     const fetchContext = async () => {
       try {
         setCtxLoading(true); setCtxError(null)
-        const res = await fetch(`/api/context?lat=${encodeURIComponent(geo.lat)}&lng=${encodeURIComponent(geo.lng)}&query=coffee`)
+        const res = await fetch(`https://intellispot.onrender.com/api/context?lat=${encodeURIComponent(geo.lat)}&lng=${encodeURIComponent(geo.lng)}&query=coffee`)
         if (!res.ok) throw new Error(`Context ${res.status}`)
         const data = await res.json()
   const c = data?.context || data || {}
@@ -843,7 +843,7 @@ export function Dashboard() {
       ;(async () => {
       try {
         setRecLoading(true); setRecError(null)
-    const res = await fetch(`/api/recommendations?lat=${encodeURIComponent(geo.lat)}&lng=${encodeURIComponent(geo.lng)}&query=${encodeURIComponent(q)}`)
+  const res = await fetch(`https://intellispot.onrender.com/api/recommendations?lat=${encodeURIComponent(geo.lat)}&lng=${encodeURIComponent(geo.lng)}&query=${encodeURIComponent(q)}`)
         if (!res.ok) throw new Error(`Recommendations ${res.status}`)
         const data = await res.json()
   let list = Array.isArray(data?.recommendations) && data.recommendations.length > 0
