@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { Dashboard } from './dashboard'
 import Demo from './demo'
@@ -10,9 +11,9 @@ import * as THREE from 'three'
 
 function Brand() {
   return (
-    <div className="flex items-center">
+    <Link to="/" className="flex items-center focus:outline-none">
       <span className="text-xl md:text-2xl font-semibold tracking-tight">IntelliSpot</span>
-    </div>
+    </Link>
   )
 }
 
