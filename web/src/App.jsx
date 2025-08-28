@@ -633,20 +633,20 @@ function Footer() {
 export default function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/" element={
           <>
+            <Navbar />
             <Hero />
             <Features />
             <CTA />
+            <Footer />
           </>
         } />
         <Route path="/dashboard" element={<Dashboard />} />
-  <Route path="/demo" element={<Demo />} />
-  <Route path="/pricing" element={<Pricing />} />
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
-      <Footer />
     </>
   )
 }
