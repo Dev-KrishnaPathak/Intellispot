@@ -29,11 +29,11 @@ function Navbar() {
         >
           Features
         </a>
-  <a className="inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 transition" href="/demo.html">Demo</a>
-  <a className="inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 transition" href="/pricing.html">Pricing</a>
+  <a className="inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 transition" href="/demo">Demo</a>
+  <a className="inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 transition" href="/pricing">Pricing</a>
       </nav>
       <div className="flex items-center gap-3">
-    <a className="inline-flex items-center rounded-full bg-black text-white px-4 py-2 text-sm hover:opacity-90 transition" href="/dashboard.html">Get Started</a>
+  <a className="inline-flex items-center rounded-full bg-black text-white px-4 py-2 text-sm hover:opacity-90 transition" href="/dashboard">Get Started</a>
       </div>
     </header>
   )
@@ -48,7 +48,7 @@ function Hero() {
       </h1>
      <p className="text-gray-400 font-bold mt-1 text-[40px] leading-[1.05] max-w-4xl mx-auto">Your schedule, beautifully clear.</p>
   <div className="mt-10 flex justify-center">
-        <a className="inline-flex items-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition shadow-sm" href="/dashboard.html">Try Now</a>
+  <a className="inline-flex items-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition shadow-sm" href="/dashboard">Try Now</a>
       </div>
   <div className="mt-10 max-w-4xl w-full mx-auto">
         <div className="rounded-2xl bg-gray-100 h-[500px] w-full overflow-hidden">
