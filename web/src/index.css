@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+	scroll-behavior: smooth;
+}
+
+@keyframes slideIn {
+	from { transform: translateY(6px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeUp {
+	from { transform: translateY(8px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+.anim-slide-in { animation: slideIn 300ms ease-out both; }
+.anim-fade-up { animation: fadeUp 350ms ease-out both; }

@@ -1,0 +1,23 @@
+{
+  "name": "intellispot-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Context-aware venue and activity recommendation platform combining real-time context signals (location, weather, time, preferences) with feedback-driven learning.",
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run start -w frontend",
+    "start:backend": "npm run start -w backend",
+    "start:frontend": "npm run start -w frontend",
+    "lint:backend": "npm run lint -w backend",
+    "test:backend": "npm run test -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
