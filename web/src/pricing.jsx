@@ -122,8 +122,4 @@ function Pricing() {
   )
 }
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Pricing />
-  </React.StrictMode>
-)
+export default Pricing

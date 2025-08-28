@@ -10,8 +10,4 @@ function Demo() {
   )
 }
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Demo />
-  </React.StrictMode>
-)
+export default Demo
