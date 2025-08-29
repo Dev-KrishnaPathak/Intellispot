@@ -1,3 +1,14 @@
+export async function getAccessTokenRedirect({ scopes = ['https://www.googleapis.com/auth/calendar.readonly'] } = {}) {
+  await ensureGisLoaded()
+  const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID
+  if (!clientId) throw new Error('Missing VITE_GOOGLE_CLIENT_ID')
+  window.google.accounts.oauth2.initCodeClient({
+    client_id: clientId,
+    scope: scopes.join(' '),
+    ux_mode: 'redirect',
+    redirect_uri: `${window.location.origin}/auth/callback`, // must match Google Cloud console
+  }).requestCode()
+}
 
 const GIS_SRC = 'https://accounts.google.com/gsi/client'
 let gisLoaded = false
@@ -64,6 +75,11 @@ export async function getAccessToken({ scopes = ['https://www.googleapis.com/aut
   await ensureGisLoaded()
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID
   if (!clientId) throw new Error('Missing VITE_GOOGLE_CLIENT_ID')
+  // Mobile: use redirect flow
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    return getAccessTokenRedirect({ scopes })
+  }
+  // Desktop: use popup flow
   const cached = loadToken()
   if (cached) return cached
   if (tokenRequestInFlight) return tokenRequestInFlight
